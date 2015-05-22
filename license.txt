@@ -1,0 +1,11 @@
+mojoPortal is primarily licensed under the Common Public License 1.0 (CPL)
+see the license-cpl.txt file included in the license folder with the source code of mojoPortal or http://opensource.org/licenses/cpl.php
+
+mojoPortal makes use of other open source projects that are licensed under other open source licenses which we believe to be compatible with the CPL. Some of these can also be found in the license folder with included in the source code package.
+
+See this page for an up to date list of open source components used in mojoPortal and their licenses:
+http://www.mojoportal.com/license.aspx
+
+mojoPortal also uses the CSS Control Adpaters from Microsoft which are licensed under the MS Permissive License, see the license-ms-permissive.txt file included in the source code distribution of mojoPortal.
+
+FamFamFam Silk icons (http://www.famfamfam.com/lab/icons/silk/), licensed under the Creative Commons Attributions 3.0, with the attribution requirement specified as "As an author, I would appreciate a reference to my authorship of the Silk icon set contents within a readme file or equivalent documentation for the software which includes the set or a subset of the icons contained within."
