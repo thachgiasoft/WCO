@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -131,10 +132,6 @@
     <ProjectReference Include="..\mojoPortal.Web.Framework\mojoPortal.Web.Framework.csproj">
       <Project>{e0d12031-bfdd-4069-9024-8b00a2aa6dbc}</Project>
       <Name>mojoPortal.Web.Framework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WCO.Buz\WCO.Buz.csproj">
-      <Project>{80741dfd-f13a-4535-b7b6-da1f346f328a}</Project>
-      <Name>WCO.Buz</Name>
     </ProjectReference>
     <ProjectReference Include="..\Web\mojoPortal.Web.net40.csproj">
       <Project>{8E511D65-4779-4689-82D4-811D3FE6866E}</Project>

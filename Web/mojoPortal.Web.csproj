@@ -639,11 +639,17 @@
     </Content>
     <Content Include="Modules\ChildPageSiteMapModule.ascx" />
     <Content Include="Modules\CustomScript.ascx" />
+    <Content Include="Modules\Gara\WCO.Gara.NewCar.ascx" />
+    <Content Include="Modules\Gara\WCO.Gara.RepairCommand.ascx" />
+    <Content Include="Modules\Gara\WebUserControl1.ascx" />
     <Content Include="Modules\HOCSINH_ADDEDIT.ascx" />
     <Content Include="Modules\HOCSINH_VIEW.ascx" />
     <Content Include="Modules\HtmlModule.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Modules\style.css" />
+    <Content Include="Modules\tabs.js" />
+    <Content Include="Modules\tabs_old.js" />
     <Content Include="Modules\TuyenModule1.ascx" />
     <Content Include="Modules\LoginModule.ascx" />
     <Content Include="Modules\MyCustomModules\HelloMojoSiteModule.ascx" />
@@ -2520,6 +2526,27 @@
     </Compile>
     <Compile Include="Modules\EmptyModule.ascx.designer.cs">
       <DependentUpon>EmptyModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Gara\WCO.Gara.NewCar.ascx.cs">
+      <DependentUpon>WCO.Gara.NewCar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Gara\WCO.Gara.NewCar.ascx.designer.cs">
+      <DependentUpon>WCO.Gara.NewCar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Gara\WCO.Gara.RepairCommand.ascx.cs">
+      <DependentUpon>WCO.Gara.RepairCommand.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Gara\WCO.Gara.RepairCommand.ascx.designer.cs">
+      <DependentUpon>WCO.Gara.RepairCommand.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Gara\WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Gara\WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\HOCSINH_ADDEDIT.ascx.cs">
       <DependentUpon>HOCSINH_ADDEDIT.ascx</DependentUpon>
