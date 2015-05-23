@@ -20,6 +20,13 @@
 <portal:mojoLabel ID="lblHS_ID" runat="server" Text="ID học sinh:" ></portal:mojoLabel>
 <portal:mojoLabel ID="HS_ID" runat="server" Text="" ></portal:mojoLabel> <br />
 <portal:mojoLabel ID="lblHS_HOTEN" runat="server" Text="Họ và tên:" ></portal:mojoLabel>
+    <br />
+    <mp:WatermarkTextBox ID="WatermarkTextBox1" runat="server" Watermark="Họ và tên"></mp:WatermarkTextBox>
+    <br />
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <br />
+    <portal:jQueryAutoCompleteTextBox ID="jQueryAutoCompleteTextBox1" runat="server"></portal:jQueryAutoCompleteTextBox>
+    <br />
 <portal:mojoLabel ID="HS_HOTEN" runat="server" Text="" ></portal:mojoLabel> <br />
 <portal:mojoLabel ID="lblHS_TUOI" runat="server" Text="Tuổi:" ></portal:mojoLabel>
 <portal:mojoLabel ID="HS_TUOI" runat="server" Text="" ></portal:mojoLabel> <br />
