@@ -17,15 +17,15 @@
 <portal:OuterBodyPanel ID="pnlOuterBody" runat="server">
 <portal:InnerBodyPanel ID="pnlInnerBody" runat="server" CssClass="modulecontent">
 <h2>Chi tiết HOCSINH</h2>
-<portal:mojoLabel ID="lblHS_ID" runat="server" Text="ID học sinh:"></portal:mojoLabel>
+<portal:mojoLabel ID="lblHS_ID" runat="server" Text="ID học sinh:" ></portal:mojoLabel>
 <portal:mojoLabel ID="HS_ID" runat="server" Text="" ></portal:mojoLabel> <br />
-<portal:mojoLabel ID="lblHS_HOTEN" runat="server" Text="Họ và tên:" ></portal:mojoLabel >
+<portal:mojoLabel ID="lblHS_HOTEN" runat="server" Text="Họ và tên:" ></portal:mojoLabel>
 <portal:mojoLabel ID="HS_HOTEN" runat="server" Text="" ></portal:mojoLabel> <br />
-<portal:mojoLabel ID="lblHS_TUOI" runat="server" Text="Tuổi:" ></portal:mojoLabel >
+<portal:mojoLabel ID="lblHS_TUOI" runat="server" Text="Tuổi:" ></portal:mojoLabel>
 <portal:mojoLabel ID="HS_TUOI" runat="server" Text="" ></portal:mojoLabel> <br />
-<portal:mojoLabel ID="lblHS_NGAYSINH" runat="server" Text="Ngày sinh:" ></portal:mojoLabel >
+<portal:mojoLabel ID="lblHS_NGAYSINH" runat="server" Text="Ngày sinh:" ></portal:mojoLabel>
 <portal:mojoLabel ID="HS_NGAYSINH" runat="server" Text="" ></portal:mojoLabel> <br />
-<br /><br /><asp:HyperLink ID="linkTroLaiDanhSach" runat="server" NavigateUrl="~/HOCSINH_LIST.aspx">Trở lại</asp:HyperLink>");
+<br /><br /><asp:HyperLink ID="linkTroLaiDanhSach" runat="server" NavigateUrl="~/HOCSINH_LIST.aspx">Trở lại</asp:HyperLink>
 </portal:InnerBodyPanel>
 </portal:OuterBodyPanel>
 </ContentTemplate>

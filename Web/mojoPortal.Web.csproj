@@ -2503,6 +2503,13 @@
     <Compile Include="Modules\EmptyModule.ascx.designer.cs">
       <DependentUpon>EmptyModule.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Modules\HOCSINH_view.ascx.cs">
+      <DependentUpon>HOCSINH_view.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HOCSINH_view.ascx.designer.cs">
+      <DependentUpon>HOCSINH_view.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Modules\HtmlModule.ascx.cs">
       <DependentUpon>HtmlModule.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

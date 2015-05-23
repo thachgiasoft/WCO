@@ -214,12 +214,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\mojoPortal.Data.pgsql\mojoPortal.Data.pgsql.csproj">
-      <Project>{B528429F-7155-496A-86B3-8B23219C10D4}</Project>
-      <Name>mojoPortal.Data.pgsql</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

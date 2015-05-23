@@ -202,12 +202,6 @@
       <Visible>False</Visible>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\mojoPortal.Data.SQLite\mojoPortal.Data.SQLite.csproj">
-      <Project>{C224A35B-AB21-4476-A411-CA5BA406598B}</Project>
-      <Name>mojoPortal.Data.SQLite</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

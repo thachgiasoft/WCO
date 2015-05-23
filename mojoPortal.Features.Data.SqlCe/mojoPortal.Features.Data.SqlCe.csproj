@@ -167,12 +167,6 @@
     <Compile Include="Survey\DBSurveyPage.cs" />
     <Compile Include="Survey\DBSurveyResponse.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\mojoPortal.Data.SqlCe\mojoPortal.Data.SqlCe.csproj">
-      <Project>{3DFA3059-3689-4B11-9317-229B3B8D91A8}</Project>
-      <Name>mojoPortal.Data.SqlCe</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

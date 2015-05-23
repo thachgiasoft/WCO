@@ -164,12 +164,6 @@
     <Compile Include="Survey\DBSurveyPage.cs" />
     <Compile Include="Survey\DBSurveyResponse.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\mojoPortal.Data.MySql\mojoPortal.Data.MySql.csproj">
-      <Project>{E2EF8E92-91A8-49CA-8500-DF558C795976}</Project>
-      <Name>mojoPortal.Data.MySql</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
