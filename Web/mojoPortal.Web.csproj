@@ -1335,6 +1335,11 @@
     <Compile Include="Controls\Validators\EmailValidator.cs" />
     <Compile Include="Controls\WorldPay\WorldPayAcceptanceMark.cs" />
     <Compile Include="Controls\WorldPay\WorldPayPurchaseButton.cs" />
+    <Compile Include="DBContext\BE\t.cs" />
+    <Compile Include="DBContext\BE\t.designer.cs">
+      <DependentUpon>t.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBContext\BE\t.designer.HOCSINH.cs" />
     <Compile Include="DBContext\cls\clsAll.cs" />
     <Compile Include="DBContext\cls\clsConn.cs" />
     <Compile Include="DBContext\cls\clsDAL.cs" />
