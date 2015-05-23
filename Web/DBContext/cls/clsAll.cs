@@ -11,11 +11,224 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using mojoPortal.Web.UI;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
 
 namespace t
 {
     public class clsAll
     {
+        public static void BindData(Control c, object o)
+        {
+            mojoLabel lbl = c as mojoLabel;
+            if (lbl != null)
+            {
+                PropertyInfo p = o.GetType().GetProperty(lbl.ID);
+                if (p != null)
+                {
+                    lbl.Text = string.Format("{0}", p.GetValue(o));
+                }
+                return;
+            }
+
+            foreach (Control c1 in c.Controls)
+            {
+                BindData(c1, o);
+            }
+        }
+
+        public static void CopyData(HtmlTable tblDetail, object outObj)
+        {
+            foreach (PropertyInfo i in outObj.GetType().GetProperties())
+            {
+                if (i.PropertyType.FullName.Equals(typeof(string).FullName) == true)
+                {
+                    TextBox txt = tblDetail.FindControl(i.Name) as TextBox;
+                    if (txt != null)
+                    {
+                        i.SetValue(outObj, txt.Text, null);
+                        continue;
+                    }
+
+                    //Thử với HidenField
+                    HiddenField hd = tblDetail.FindControl(i.Name) as HiddenField;
+                    if (hd != null)
+                    {
+                        i.SetValue(outObj, hd.Value, null);
+                        continue;
+                    }
+
+                    //Thử với mojoDropDownList
+                    mojoDropDownList dr = tblDetail.FindControl(i.Name) as mojoDropDownList;
+                    if (dr != null)
+                    {
+                        i.SetValue(outObj, dr.SelectedValue, null);
+                        continue;
+                    }
+
+                    //Không thuộc trường hợp nào
+                    continue;
+                }
+                if (i.PropertyType.FullName.Equals(typeof(int).FullName) == true)
+                {
+                    //Thử với HidenField
+                    HiddenField hd = tblDetail.FindControl(i.Name) as HiddenField;
+                    if (hd == null) continue;
+                    if (hd.Value == null) continue;
+                    if (string.IsNullOrEmpty(hd.Value) == true) continue;
+                    int intValue = -1;
+                    bool tryP = int.TryParse(hd.Value, out intValue);
+                    if (tryP == false) continue;
+                    i.SetValue(outObj, intValue, null);
+                    continue;
+                }
+                if (i.PropertyType.FullName.Equals(typeof(decimal).FullName) == true)
+                {
+                    TextBox txt = tblDetail.FindControl(i.Name) as TextBox;
+                    if (txt == null) continue;
+                    decimal dm = 0;
+                    if (decimal.TryParse(txt.Text, out dm) == true)
+                        i.SetValue(outObj, dm, null);
+                }
+                if (i.PropertyType.FullName.Equals(typeof(DateTime).FullName) == true)
+                {
+                    jDatePicker txt = tblDetail.FindControl(i.Name) as jDatePicker;
+                    if (txt == null) continue;
+                    DateTime dm = default(DateTime);
+                    if (DateTime.TryParseExact(txt.Text, "dd/MM/yyyy", null, DateTimeStyles.None, out dm) == true)
+                        i.SetValue(outObj, dm, null);
+                }
+                if (i.PropertyType.FullName.Equals(typeof(DateTime?).FullName) == true)
+                {
+                    jDatePicker txt = tblDetail.FindControl(i.Name) as jDatePicker;
+                    if (txt == null) continue;
+                    DateTime dm = default(DateTime);
+                    if (txt.Text.Length == 10)
+                    {
+                        if (DateTime.TryParseExact(txt.Text, "dd/MM/yyyy", null, DateTimeStyles.None, out dm) == true)
+                            i.SetValue(outObj, dm, null);
+                    }
+                    if (txt.Text.Length == 21)
+                    {
+                        /*string[] formats = {"M/d/yyyy h:mm:ss tt", "M/d/yyyy h:mm tt", 
+                       "MM/dd/yyyy hh:mm:ss", "M/d/yyyy h:mm:ss", 
+                       "M/d/yyyy hh:mm tt", "M/d/yyyy hh tt", 
+                       "M/d/yyyy h:mm", "M/d/yyyy h:mm", 
+                       "MM/dd/yyyy hh:mm", "M/dd/yyyy hh:mm"};
+                       string[] dateStrings = {"5/1/2009 6:32 PM", "05/01/2009 6:32:05 PM", 
+                        "5/1/2009 6:32:00", "05/01/2009 06:32", 
+                        "05/01/2009 06:32:00 PM", "05/01/2009 06:32:00"};
+                        if (DateTime.TryParseExact(txt.Text, formats,
+                             new CultureInfo("en-US"),
+                             DateTimeStyles.None,
+                             out dm))
+                            i.SetValue(outObj, dm, null);*/
+
+                        if (DateTime.TryParseExact(txt.Text, "dd/MM/yyyy 0:HH-mm-ss", null, DateTimeStyles.None, out dm) == true)
+                            i.SetValue(outObj, dm, null);
+                    }
+
+                    else
+                    {
+                        if (DateTime.TryParse(txt.Text, CultureInfo.CreateSpecificCulture("vi-VN"), DateTimeStyles.None, out dm) == true)
+                        {
+                            i.SetValue(outObj, dm, null);
+                        }
+                    }
+                }
+                if (i.PropertyType.FullName.Equals(typeof(bool).FullName) == true)
+                {
+                    CheckBox txt = tblDetail.FindControl(i.Name) as CheckBox;
+                    if (txt == null) continue;
+                    i.SetValue(outObj, txt.Checked);
+                }
+            }
+        }
+
+        public static void BindData(object outObj, HtmlTable tblDetail)
+        {
+            foreach (PropertyInfo i in outObj.GetType().GetProperties())
+            {
+                if (i.PropertyType.FullName.Equals(typeof(string).FullName) == true)
+                {
+                    TextBox txt = tblDetail.FindControl(i.Name) as TextBox;
+                    if (txt != null)
+                    {
+                        txt.Text = string.Format("{0}", i.GetValue(outObj, null));
+                        continue;
+                    }
+
+                    //Thử với HidenField
+                    HiddenField hd = tblDetail.FindControl(i.Name) as HiddenField;
+                    if (hd != null)
+                    {
+                        hd.Value = string.Format("{0}", i.GetValue(outObj, null));
+                        continue;
+                    }
+
+                    mojoDropDownList dr = tblDetail.FindControl(i.Name) as mojoDropDownList;
+                    if (dr != null)
+                    {
+                        dr.SelectedValue = string.Format("{0}", i.GetValue(outObj, null));
+                        continue;
+                    }
+
+                    continue;
+                }
+                if (i.PropertyType.FullName.Equals(typeof(int).FullName) == true)
+                {
+                    //Thử với HidenField
+                    HiddenField hd = tblDetail.FindControl(i.Name) as HiddenField;
+                    if (hd == null) continue;
+                    hd.Value = string.Format("{0}", i.GetValue(outObj, null));
+                    continue;
+                }
+                if (i.PropertyType.FullName.Equals(typeof(decimal).FullName) == true)
+                {
+                    TextBox txt = tblDetail.FindControl(i.Name) as TextBox;
+                    if (txt == null) continue;
+                    decimal dm = 0;
+                    if (decimal.TryParse(txt.Text, out dm) == true)
+                        // i.SetValue(outObj, dm, null);
+                        txt.Text = string.Format("{0}", i.GetValue(outObj, null));
+                }
+                if (i.PropertyType.FullName.Equals(typeof(DateTime).FullName) == true ||
+                    i.PropertyType.FullName.Equals(typeof(DateTime?).FullName) == true)
+                {
+                    jDatePicker txt = tblDetail.FindControl(i.Name) as jDatePicker;
+                    if (txt == null) continue;
+                    object objValue = i.GetValue(outObj, null);
+                    if (objValue == null)
+                    {
+                        txt.Text = "";
+                        continue;
+                    }
+                    DateTime? dt = objValue as DateTime?;
+                    if (dt.HasValue == false)
+                    {
+                        txt.Text = "";
+                        continue;
+                    }
+                    txt.Text = string.Format("{0:dd/MM/yyyy}", dt);
+
+                }
+                if (i.PropertyType.FullName.Equals(typeof(bool).FullName) == true)
+                {
+                    CheckBox txt = tblDetail.FindControl(i.Name) as CheckBox;
+                    if (txt == null) continue;
+                    object obj = i.GetValue(outObj);
+                    if (obj == null)
+                    {
+                        txt.Checked = false;
+                        continue;
+                    }
+                    txt.Checked = (bool)obj;
+                }
+            }
+        }
+
         public static DataTable AddFirstRowEmpty(DataTable DATA)
         {
             if (DATA == null) return null;
@@ -483,7 +696,8 @@ namespace t
                     return bool.Parse(source.ToString());
                 case "datetime":
                 case "datetime?":
-                    return DateTime.Parse(source.ToString(), cul);
+                    //return DateTime.Parse(source.ToString(), cul);
+                    return source;
                 case "char":
                 case "char?":
                     return char.Parse(source.ToString());

@@ -14,7 +14,7 @@ namespace t
 
     public class clsDAL
     {
-        public static DBManagement defaultDBMan = DBManagement.Access;
+        public static DBManagement defaultDBMan = DBManagement.SQL;
 
         #region Utilities
         public static string SelectField(string FieldName, ProType typ)

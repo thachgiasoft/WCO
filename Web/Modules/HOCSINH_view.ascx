@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="HOCSINH_VIEW.ascx.cs" Inherits="mojoPortal.Web.Modules.HOCSINH_VIEW" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HOCSINH_VIEW.ascx.cs" Inherits="mojoPortal.Web.Modules.HOCSINH_VIEW" %>
 <%@ Import Namespace="System.Globalization" %>
 <%@ Import Namespace="mojoPortal.Business" %>
 <%@ Import Namespace="mojoPortal.Business.WebHelpers" %>
@@ -23,7 +23,7 @@
 <portal:mojoLabel ID="HS_HOTEN" runat="server" Text="" ></portal:mojoLabel> <br />
 <portal:mojoLabel ID="lblHS_TUOI" runat="server" Text="Tuổi:" ></portal:mojoLabel>
 <portal:mojoLabel ID="HS_TUOI" runat="server" Text="" ></portal:mojoLabel> <br />
-<portal:mojoLabel ID="lblHS_NGAYSINH" runat="server" Text="Ngày sinh:" ></portal:mojoLabel>
+<portal:mojoLabel ID="lblHS_NGAYSINH" runat="server" Text="Ngày sinh1:" ></portal:mojoLabel>
 <portal:mojoLabel ID="HS_NGAYSINH" runat="server" Text="" ></portal:mojoLabel> <br />
 <br /><br /><asp:HyperLink ID="linkTroLaiDanhSach" runat="server" NavigateUrl="~/HOCSINH_LIST.aspx">Trở lại</asp:HyperLink>
 </portal:InnerBodyPanel>
