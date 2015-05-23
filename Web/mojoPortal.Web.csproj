@@ -1335,6 +1335,17 @@
     <Compile Include="Controls\Validators\EmailValidator.cs" />
     <Compile Include="Controls\WorldPay\WorldPayAcceptanceMark.cs" />
     <Compile Include="Controls\WorldPay\WorldPayPurchaseButton.cs" />
+    <Compile Include="DBContext\cls\clsAll.cs" />
+    <Compile Include="DBContext\cls\clsConn.cs" />
+    <Compile Include="DBContext\cls\clsDAL.cs" />
+    <Compile Include="DBContext\cls\clsDalADO.cs" />
+    <Compile Include="DBContext\cls\clsDalOLE.cs" />
+    <Compile Include="DBContext\cls\clsService.cs" />
+    <Compile Include="DBContext\cls\clsTranslator.cs" />
+    <Compile Include="DBContext\cls\CryptographyEnum.cs" />
+    <Compile Include="DBContext\cls\CryptographyHelper.cs" />
+    <Compile Include="DBContext\cls\RSACryptography.cs" />
+    <Compile Include="DBContext\Settings.cs" />
     <Compile Include="DesignTools\CacheTool.aspx.cs">
       <DependentUpon>CacheTool.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
