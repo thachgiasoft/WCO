@@ -10,7 +10,7 @@
 namespace mojoPortal.Web.Modules {
     
     
-    public partial class HOCSINH_VIEW {
+    public partial class HOCSINH_ADDEDIT {
         
         /// <summary>
         /// pnlOuterWrap control.
@@ -128,6 +128,15 @@ namespace mojoPortal.Web.Modules {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::mojoPortal.Web.Controls.WatermarkTextBox HS_TUOI;
+        
+        /// <summary>
+        /// HS_TUOI_FilteredTextBoxExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender HS_TUOI_FilteredTextBoxExtender;
         
         /// <summary>
         /// lblHS_NGAYSINH control.

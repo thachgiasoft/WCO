@@ -639,6 +639,7 @@
     </Content>
     <Content Include="Modules\ChildPageSiteMapModule.ascx" />
     <Content Include="Modules\CustomScript.ascx" />
+    <Content Include="Modules\HOCSINH_ADDEDIT.ascx" />
     <Content Include="Modules\HOCSINH_VIEW.ascx" />
     <Content Include="Modules\HtmlModule.ascx">
       <SubType>ASPXCodeBehind</SubType>
@@ -2519,6 +2520,13 @@
     </Compile>
     <Compile Include="Modules\EmptyModule.ascx.designer.cs">
       <DependentUpon>EmptyModule.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HOCSINH_ADDEDIT.ascx.cs">
+      <DependentUpon>HOCSINH_ADDEDIT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HOCSINH_ADDEDIT.ascx.designer.cs">
+      <DependentUpon>HOCSINH_ADDEDIT.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\HOCSINH_VIEW.ascx.cs">
       <DependentUpon>HOCSINH_VIEW.ascx</DependentUpon>
