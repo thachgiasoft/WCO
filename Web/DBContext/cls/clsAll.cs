@@ -20,24 +20,24 @@ namespace t
 {
     public class clsAll
     {
-        public static void BindData(Control c, object o)
-        {
-            mojoLabel lbl = c as mojoLabel;
-            if (lbl != null)
-            {
-                PropertyInfo p = o.GetType().GetProperty(lbl.ID);
-                if (p != null)
-                {
-                    lbl.Text = string.Format("{0}", p.GetValue(o));
-                }
-                return;
-            }
+        //public static void BindData(Control c, object o)
+        //{
+        //    mojoLabel lbl = c as mojoLabel;
+        //    if (lbl != null)
+        //    {
+        //        PropertyInfo p = o.GetType().GetProperty(lbl.ID);
+        //        if (p != null)
+        //        {
+        //            lbl.Text = string.Format("{0}", p.GetValue(o));
+        //        }
+        //        return;
+        //    }
 
-            foreach (Control c1 in c.Controls)
-            {
-                BindData(c1, o);
-            }
-        }
+        //    foreach (Control c1 in c.Controls)
+        //    {
+        //        BindData(c1, o);
+        //    }
+        //}
 
         public static void CopyData(HtmlTable tblDetail, object outObj)
         {
@@ -147,12 +147,19 @@ namespace t
             }
         }
 
-        public static void BindData(object outObj, HtmlTable tblDetail)
+        public static void BindData(Control tblDetail, object outObj)
         {
             foreach (PropertyInfo i in outObj.GetType().GetProperties())
             {
                 if (i.PropertyType.FullName.Equals(typeof(string).FullName) == true)
                 {
+                    mojoLabel lbl1 = tblDetail.FindControl(i.Name) as mojoLabel;
+                    if (lbl1 != null)
+                    {
+                        lbl1.Text = string.Format("{0}", i.GetValue(outObj, null));
+                        continue;
+                    }
+
                     TextBox txt = tblDetail.FindControl(i.Name) as TextBox;
                     if (txt != null)
                     {
@@ -198,20 +205,42 @@ namespace t
                     i.PropertyType.FullName.Equals(typeof(DateTime?).FullName) == true)
                 {
                     jDatePicker txt = tblDetail.FindControl(i.Name) as jDatePicker;
-                    if (txt == null) continue;
-                    object objValue = i.GetValue(outObj, null);
-                    if (objValue == null)
+                    if (txt != null)
                     {
-                        txt.Text = "";
+                        object objValue = i.GetValue(outObj, null);
+                        if (objValue == null)
+                        {
+                            txt.Text = "";
+                            continue;
+                        }
+                        DateTime? dt = objValue as DateTime?;
+                        if (dt.HasValue == false)
+                        {
+                            txt.Text = "";
+                            continue;
+                        }
+                        txt.Text = string.Format("{0:dd/MM/yyyy}", dt);
                         continue;
                     }
-                    DateTime? dt = objValue as DateTime?;
-                    if (dt.HasValue == false)
+
+                    mojoLabel lbl1 = tblDetail.FindControl(i.Name) as mojoLabel;
+                    if (lbl1 != null)
                     {
-                        txt.Text = "";
+                        object objValue = i.GetValue(outObj, null);
+                        if (objValue == null)
+                        {
+                            lbl1.Text = "";
+                            continue;
+                        }
+                        DateTime? dt = objValue as DateTime?;
+                        if (dt.HasValue == false)
+                        {
+                            lbl1.Text = "";
+                            continue;
+                        }
+                        lbl1.Text = string.Format("{0:dd/MM/yyyy}", dt);
                         continue;
                     }
-                    txt.Text = string.Format("{0:dd/MM/yyyy}", dt);
 
                 }
                 if (i.PropertyType.FullName.Equals(typeof(bool).FullName) == true)
