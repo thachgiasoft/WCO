@@ -663,6 +663,7 @@
     <Content Include="MemberList.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Modules\BaoGia\WCO.PriceAnnounce.ascx" />
     <Content Include="Modules\ChildPageSiteMapModule.ascx" />
     <Content Include="Modules\CustomScript.ascx" />
     <Content Include="Modules\Gara\WCO.Gara.NewCar.ascx" />
@@ -2531,6 +2532,13 @@
     </Compile>
     <Compile Include="MemberList.aspx.designer.cs">
       <DependentUpon>MemberList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BaoGia\WCO.PriceAnnounce.ascx.cs">
+      <DependentUpon>WCO.PriceAnnounce.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\BaoGia\WCO.PriceAnnounce.ascx.designer.cs">
+      <DependentUpon>WCO.PriceAnnounce.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\ChildPageSiteMapModule.ascx.cs">
       <DependentUpon>ChildPageSiteMapModule.ascx</DependentUpon>
