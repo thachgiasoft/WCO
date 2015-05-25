@@ -1,4 +1,4 @@
-/* Created by Artisteer v4.1.0.59861 */
+/* Created by Artisteer v4.2.0.60623 */
 /*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true, curly:false, browser:true, jquery:false */
 /*global jQuery BackgroundHelper */
 
@@ -10,8 +10,7 @@ browser = function ($) {
         { str: navigator.vendor, sub: 'Apple', ver: 'Version', name: 'safari' },
         { prop: window.opera, ver: 'Opera', name: 'opera' },
         { str: navigator.userAgent, sub: 'Firefox', ver: 'Firefox', name: 'firefox' },
-        { str: navigator.userAgent, sub: 'MSIE', ver: 'MSIE', name: 'ie' },
-        { str: navigator.userAgent, sub: 'Trident/7.0', ver: 'rv', name: 'ie' }
+        { str: navigator.userAgent, sub: 'MSIE', ver: 'MSIE', name: 'ie' }
     ];
     var v = function (s, n) {
         var i = s.indexOf(data[n].ver);
@@ -20,9 +19,7 @@ browser = function ($) {
     var result = { name: 'unknown', version: 0 };
     var html = $('html');
     for (var n = 0; n < data.length; n++) {
-        if (!result[data[n].name]) {
-            result[data[n].name] = false;
-        }
+        result[data[n].name] = false;
         if ((data[n].str && (data[n].str.indexOf(data[n].sub) !== -1)) || data[n].prop) {
             result.name = data[n].name;
             result[result.name] = true;
@@ -204,7 +201,7 @@ jQuery(function ($) {
     // ie8
     if (!browser.ie || browser.version > 8) return;
     $('.art-shapes').each(function () {
-        if ($(this).siblings('.art-artslidr').length) {
+        if ($(this).siblings('.art-slider').length) {
             $(this).remove();
         } else {
             $(this).css('z-index', 1);
@@ -278,7 +275,7 @@ var navigatorResizeHandler = (function ($) {
     "use strict";
     return function (responsiveDesign) {
         if (responsiveDesign) return;
-        $(".art-artslidr").each(function () {
+        $(".art-slider").each(function () {
             var artslidr = $(this);
             var artslidrWidth = artslidr.width();
             var nav = artslidr.siblings(".art-slidenavigator");
@@ -305,7 +302,6 @@ var processElementMultiplyBg = (function ($) {
             path = (script.attr('src') || '');
             path = path.substr(0, path.lastIndexOf('/') + 1);
         }
-        var html = '';
         var el = $(selector);
         var bgimages = info.images.split(",");
         var bgpositions = info.positions.split(",");
@@ -315,7 +311,7 @@ var processElementMultiplyBg = (function ($) {
                 continue;
             var imgIdx = bgimage.lastIndexOf('images/');
             var className = bgimage.substring(imgIdx + 7, bgimage.length - 6);
-            el.append("<div class=\"ie8fix " + className + "\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;background:" + bgimage.replace(/(images\/[^\/]+)$/, path + '$1') + " " + bgpositions[i] + " no-repeat\"></div>");
+            el.append("<div class=\"ie8fix " + className + "\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;background:" + bgimage.replace(/(images\/[^\/]+)$/, path + '$1') + " " + bgpositions[i] + " no-repeat\">");
         }
         el.css('background-image', info.bgimage.replace(/(images\/[^\/]+)$/, path + '$1'));
         el.css('background-position-x', "50%");
@@ -330,9 +326,9 @@ var responsiveNavigator = (function ($) {
         if (typeof headerObjectResizer !== 'undefined' && headerObjectResizer.isPreview) return;
 
         var sheet = $('.art-sheet');
-        var sheetWidth = sheet.outerWidth();
+        var sheetWidth = sheet.width();
 
-        $(".art-artslidr").each(function () {
+        $(".art-slider").each(function () {
             var currentSlider = $(this);
             var currentSliderWidth = currentSlider.width();
 
@@ -374,12 +370,8 @@ jQuery(function ($) {
     if (typeof responsiveDesign === "undefined") {
         $(window).bind("resize", responsiveNavigator);
     }
-
-    $(window).on("load", function pageInitialize() {
-        $(window).trigger("resize");
-        $(window).off("load", pageInitialize);
-    });
 });
+
 
 
 /* Icons in Header should have display block.
@@ -393,47 +385,8 @@ if (browser.opera) {
 
 jQuery(function($) {
     "use strict";
-     $(window).bind("resize", function () {
-        /*global responsiveDesign */
-        "use strict";
-        if (typeof responsiveDesign !== "undefined" && responsiveDesign.isResponsive)
-            return;
-        var sheetLeft = $(".art-sheet").offset().left;
-        $("header.art-header #art-flash-area").each(function () {
-            var object = $(this);
-            object.css("left", sheetLeft + "px");
-        });
-    });
-});
-
-jQuery(function($) {
-    "use strict";
     $('nav.art-nav').addClass("desktop-nav");
 });
-jQuery(function ($) {
-    "use strict";
-    $(window).bind('resize', function() {
-        var pageWidth = $('#art-main').width();
-        var nav = $('nav.art-nav');
-        nav.css('left', (nav.parent().width() - pageWidth) / 2 + 'px').css('width', pageWidth + 'px');
-    });
-});
-
-jQuery(window).bind('resize', (function ($) {
-    "use strict";
-    return function() {
-        var menu = jQuery("nav.art-nav");
-        var menuOffset = menu.offset();
-        var pageOffset = jQuery('#art-main').offset();
-        if (!menuOffset || !pageOffset) {
-            return;
-        }
-        jQuery("#art-hmenu-bg").css({
-            "height": menu.outerHeight() + "px",
-            "top": (menuOffset.top - pageOffset.top) + "px"
-        });
-    };
-})(jQuery));
 
 
 jQuery(function ($) {
@@ -480,23 +433,15 @@ jQuery(function ($) {
         }
     });
 });
-
-jQuery(function ($) {
+jQuery(function () {
     "use strict";
-    var setDirection = function() {
-        setHMenuOpenDirection({
-            container: "div.art-sheet",
-            defaultContainer: "#art-main",
-            menuClass: "art-hmenu",
-            leftToRightClass: "art-hmenu-left-to-right",
-            rightToLeftClass: "art-hmenu-right-to-left"
-        });
-    };
-    if (typeof responsiveDesign !== "undefined") {
-        $(window).on('responsive', setDirection);
-    } else {
-        setDirection();
-    }
+    setHMenuOpenDirection({
+        container: "div.art-sheet",
+        defaultContainer: "#art-main",
+        menuClass: "art-hmenu",
+        leftToRightClass: "art-hmenu-left-to-right",
+        rightToLeftClass: "art-hmenu-right-to-left"
+    });
 });
 
 var setHMenuOpenDirection = (function ($) {
@@ -536,6 +481,21 @@ jQuery(function ($) {
         function () { $(this).prev().children("a").removeClass("art-hmenu-before-hovered"); });
 });
 
+jQuery(function($) {
+    "use strict";
+     $(window).bind("resize", function () {
+        /*global responsiveDesign */
+        "use strict";
+        if (typeof responsiveDesign !== "undefined" && responsiveDesign.isResponsive)
+            return;
+        var sheetLeft = $(".art-sheet").offset().left;
+        $("header.art-header #art-flash-area").each(function () {
+            var object = $(this);
+            object.css("left", sheetLeft + "px");
+        });
+    });
+});
+
 jQuery(function ($) {
     'use strict';
     $(window).bind('resize', function () {
@@ -571,6 +531,16 @@ jQuery(function ($) {
     $(window).trigger('resize');
 });
 
+jQuery(function($) {
+    "use strict";
+    if (!$('html').hasClass('ie7')) {
+        return;
+    }
+    $('ul.art-vmenu li:not(:first-child),ul.art-vmenu li li li:first-child,ul.art-vmenu>li>ul').each(function () { $(this).append('<div class="art-vmenu-separator"> </div><div class="art-vmenu-separator-bg"> </div>'); });
+});
+
+
+
 var artButtonSetup = (function ($) {
     'use strict';
     return (function (className) {
@@ -604,6 +574,11 @@ var artButtonSetup = (function ($) {
 jQuery(function () {
     'use strict';
     artButtonSetup("art-button");
+});
+
+jQuery(function($) {
+    'use strict';
+    $('input.art-search-button, form.art-search input[type="submit"]').attr('value', '');
 });
 
 var Control = (function ($) {
@@ -831,7 +806,7 @@ jQuery(function () {
 (function ($) {
     'use strict';
     // transition && transitionEnd && browser prefix
-    $.support.themeTransition = (function () {
+    $.support.transition = (function () {
         var thisBody = document.body || document.documentElement,
             thisStyle = thisBody.style,
             support = thisStyle.transition !== undefined ||
@@ -850,7 +825,7 @@ jQuery(function () {
                     chrome: "-webkit-",
                     safari: "-webkit-",
                     ie: ""
-                }[browser.name] || "");
+                }[browser.name]);
             })()
         };
     })();
@@ -887,7 +862,7 @@ jQuery(function () {
             $.each(positions, function (i) {
                 var position = $.trim(this);
                 var point = position.split(" ");
-                var zeroValue = browser.ie && browser.version >= 10 ? 0.1 : 0;
+                var zeroValue = browser.ie && browser.version === 10 ? 0.1 : 0;
                 if (point.length > 1) {
                     var x = point[0].indexOf('%') === -1 ? parseFloat(point[0], 10) : zeroValue;
                     var y = point[1].indexOf('%') === -1 ? parseFloat(point[1], 10) : zeroValue;
@@ -1001,7 +976,7 @@ jQuery(function () {
         };
 
         this.transition = function (container, on) {
-            container.css($.support.themeTransition.prefix + "transition", on ? "background-position " + transitionDuration + " ease-in-out" : "");
+            container.css($.support.transition.prefix + "transition", on ? "background-position " + transitionDuration + " ease-in-out" : "");
         };
 
         function getCssPositions(positions, offset) {
@@ -1046,7 +1021,7 @@ jQuery(function () {
                 innerDirection = this.settings.direction === "next" ? "forward" : "back",
                 reset = direction === "next" ? "first" : "last",
                 moving = interval,
-                slider = this, tmp;
+                artslidr = this, tmp;
 
             active = true;
 
@@ -1057,7 +1032,7 @@ jQuery(function () {
                 if (!this.settings.repeat) { last = true; active = false; return; }
             }
 
-            if ($.support.themeTransition) {
+            if ($.support.transition) {
                 nextItem.addClass(this.settings.direction);
                 tmp = nextItem.get(0).offsetHeight;
 
@@ -1066,8 +1041,8 @@ jQuery(function () {
 
                 element.trigger("beforeSlide", children.length);
 
-                element.one($.support.themeTransition.event, function () {
-                    nextItem.removeClass(slider.settings.direction)
+                element.one($.support.transition.event, function () {
+                    nextItem.removeClass(artslidr.settings.direction)
                         .removeClass(innerDirection)
                         .addClass("active");
                     activeItem.removeClass("active")
@@ -1101,7 +1076,7 @@ jQuery(function () {
             var activeItem = element.find(".active"),
                 children = activeItem.parent().children(),
                 activeIndex = children.index(activeItem),
-                slider = this;
+                artslidr = this;
 
             if (index > (children.length - 1) || index < 0) {
                 return;
@@ -1109,7 +1084,7 @@ jQuery(function () {
 
             if (active) {
                 return element.one("afterSlide", function () {
-                    slider.to(index);
+                    artslidr.to(index);
                 });
             }
 
@@ -1160,36 +1135,36 @@ jQuery(function () {
         this.navigate(children.filter(".active"));
 
         if (this.settings.clickevents) {
-            $(this.settings.navigator).on("click", "a", { slider: this }, function (event) {
+            $(this.settings.navigator).on("click", "a", { artslidr: this }, function (event) {
                 var activeIndex = children.index(children.filter(".active"));
                 var index = $(this).parent().children().index($(this));
                 if (activeIndex !== index) {
-                    event.data.slider.to(index);
+                    event.data.artslidr.to(index);
                 }
                 event.preventDefault();
             });
         }
 
         if (this.settings.hover) {
-            var slider = this;
+            var artslidr = this;
             element.add(this.settings.navigator)
                    .add(element.siblings(".art-shapes")).hover(function () {
-                       if (element.is(":visible") && !last) { slider.stop(true); }
+                       if (element.is(":visible") && !last) { artslidr.stop(true); }
                    }, function () {
-                       if (element.is(":visible") && !last) { slider.start(); }
+                       if (element.is(":visible") && !last) { artslidr.start(); }
                    });
         }
     };
 
-    $.fn.themeSlider = function (arg) {
+    $.fn.artslidr = function (arg) {
         return this.each(function () {
             var element = $(this),
-                data = element.data("slider"),
+                data = element.data("artslidr"),
                 options = typeof arg === "object" && arg;
 
             if (!data) {
                 data = new ThemeSlider(element, options);
-                element.data("slider", data);
+                element.data("artslidr", data);
             }
 
             if (typeof arg === "string" && data[arg]) {
@@ -1204,6 +1179,42 @@ jQuery(function () {
 
 
 
+
+if (typeof window.resizeData === 'undefined') window.resizeData = {};
+window.resizeData.headerPageWidth = false;
+if (typeof window.defaultResponsiveData === 'undefined') window.defaultResponsiveData = [false, true, true, true, true, ];
+
+resizeData['headline'] = {
+   responsive: [
+                  { left: 0.02, top: 0.69, visible: true }, 
+                  { left: 0.02, top: 0.69, visible: true }, 
+                  { left: 0.02, top: 0.69, visible: true }, 
+                  { left: 0.02, top: 0.69, visible: true }, 
+                  { left: 0.02, top: 0.69, visible: true }, 
+               ],
+   area: {
+       x: 0,
+       y: 0
+   },
+   width: 236,
+   height: 31,
+   autoWidth: true};
+
+resizeData['slogan'] = {
+   responsive: [
+                  { left: 0.02, top: 0.85, visible: true }, 
+                  { left: 0.02, top: 0.85, visible: true }, 
+                  { left: 0.02, top: 0.85, visible: true }, 
+                  { left: 0.02, top: 0.85, visible: true }, 
+                  { left: 0.02, top: 0.85, visible: true }, 
+               ],
+   area: {
+       x: 0,
+       y: 0
+   },
+   width: 141,
+   height: 15,
+   autoWidth: true};
 
 // used to apply compicated values in style like '!important!
 function applyCss(object, param, value) {
@@ -1239,7 +1250,7 @@ function isContentSlider(object) {
     if (isHeader) {
         return false;
     }
-    var isPageSlider = object.parents('.art-pageslider').length > 0;
+    var isPageSlider = object.parents('.art-pageartslidr').length > 0;
     if (isPageSlider)
         return false;
 
@@ -1253,7 +1264,7 @@ function sheetLeftFunc(sheet, object) {
     if (isHeader) {
         if (resizeData.headerPageWidth) return sheetLeft;
     } else {
-        var isPageSlider = object.parents('.art-pageslider').length > 0;
+        var isPageSlider = object.parents('.art-pageartslidr').length > 0;
         if (isPageSlider) {
             if (resizeData.pageSliderPageWidth) return sheetLeft;
         }
@@ -1279,7 +1290,7 @@ var headerObjectResizer = {
             var cleanUpStyles = false;
             // when use default respo so while in desktop mode always use 0-type, in other case cleanup our styles
             if (typeof responsiveDesign !== 'undefined' && 
-                    defaultResponsiveData &&
+                    defaultResponsiveData[responsiveDesign.responsiveTypeIdx] &&
                     responsiveDesign.isResponsive) {
                 cleanUpStyles = true;
             }
@@ -1297,7 +1308,7 @@ var headerObjectResizer = {
             }
 
             var sheet = $('.art-sheet');
-            var sheetWidth = sheet.outerWidth();
+            var sheetWidth = sheet.width();
 
             var header = $('header');
             var height = 0;
@@ -1305,10 +1316,10 @@ var headerObjectResizer = {
 
             // move html shapes
             var headerQuery = 'header.art-header .art-shapes>*, header.art-header .art-textblock, header.art-header>.art-headline, header.art-header>.art-slogan, header.art-header>.art-positioncontrol, header.art-header>.art-logo';
-            var pageSliderQuery = '.art-pageslider .art-slide-item>*';
+            var pageSliderQuery = '.art-pageartslidr .art-slide-item>*';
             if (headerObjectResizer.isPreview) {
-                headerQuery = 'header .art-slider';
-                pageSliderQuery = '.art-pageslider .art-slider, .art-pageslider .art-textblock';
+                headerQuery = 'header .art-artslidr';
+                pageSliderQuery = '.art-pageartslidr .art-artslidr, .art-pageslider .art-textblock';
             }
             $(headerQuery + ', ' + pageSliderQuery).each(function () {
                 var object = $(this);
@@ -1323,7 +1334,7 @@ var headerObjectResizer = {
                     if (val.indexOf(cssPrefix) !== 0) return;
 
                     val = val.substring(cssPrefix.length);
-                    var data = resizeData;
+                    var data = resizeData[val];
                     if (typeof data === 'undefined') return;
 
                     if (cleanUpStyles) {
@@ -1332,7 +1343,7 @@ var headerObjectResizer = {
                         object.css('margin-left', '');
                     }
 
-                    var respData = data.responsive;
+                    var respData = data.responsive[responsiveType];
                     if (respData.visible) {
                         object.css('display', '');
                     } else {
@@ -1385,7 +1396,7 @@ var headerObjectResizer = {
                 slide.css('background-size', '');
 
                 var bgImage = slide.css('background-image') ? slide.css('background-image').split(',') : [];
-                var bgPosition = slide.css('background-position') && (slide.css('background-position').replace(/[^\d]+/gi, '')).length > 0 ?
+                var bgPosition = slide.css('background-position') && (slide.css('background-position').replace(/[0][^\d]+/gi, '')).length > 0 ?
                     slide.css('background-position').split(',') :
                     [];
                 if (bgImage.length !== bgPosition.length) {
@@ -1403,10 +1414,10 @@ var headerObjectResizer = {
 
                     var name = val.substring(findImageIdx + 7, findDotIdx);
 
-                    var data = resizeData;
+                    var data = resizeData[name];
                     if (typeof data === 'undefined') return;
 
-                    var respData = data.responsive;
+                    var respData = data.responsive[responsiveType];
                     // big default coordinates for hiding
                     var x = 9999, y = 9999;
                     if (respData.visible) {
@@ -1417,10 +1428,10 @@ var headerObjectResizer = {
                         y += data.area.y;
                     }
 
-                    bgPosition = x + 'px ' + y + 'px';
+                    bgPosition[idx] = x + 'px ' + y + 'px';
                 });
 
-                slide.css('background-position', bgPosition.join(','));
+                slide.css('background-position', bgPosition.join(','))
 
                 if (!slideVisible && browser.ie) {
                     slide.css('display', '');
@@ -1456,3 +1467,6 @@ jQuery(function ($) {
         "positions": ""
     });
 });
+if (typeof window.resizeData === 'undefined') window.resizeData = {};
+
+window.resizeData.pageSliderPageWidth = false;

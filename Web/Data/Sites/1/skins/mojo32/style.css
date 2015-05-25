@@ -35,18 +35,17 @@ h1, h2, h3, h4, h5, h6, p, a, ul, ol, li
  */
 .art-button
 {
-   border: 0;
    border-collapse: separate;
    -webkit-border-radius: 0;
    -webkit-background-origin: border !important;
    -moz-background-origin: border !important;
    background-origin: border-box !important;
-   background: #949494;
-   background: rgba(148, 148, 148, 0.8);
-   border-width: 0;
+   background: #5C4300;
+   background: rgba(92, 67, 0, 0.8);
+   border:1px solid rgba(143, 105, 0, 0.8);
    padding:0 20px;
    margin:0 auto;
-   height:30px;
+   height:28px;
 }
 
 .art-postcontent,
@@ -1158,7 +1157,7 @@ button.art-button
    overflow: visible;
    cursor: pointer;
    text-indent: 0;
-   line-height: 30px;
+   line-height: 28px;
    -webkit-box-sizing: content-box;
    -moz-box-sizing: content-box;
    box-sizing: content-box;
@@ -1200,7 +1199,7 @@ input.art-button
 {
    background: #363636;
    background: rgba(54, 54, 54, 0.8);
-   border-width: 0;
+   border:1px solid rgba(54, 54, 54, 0.8);
    padding:0 20px;
    margin:0 auto;
 }
@@ -1212,7 +1211,7 @@ input.art-button
 {
    background: #8F6900;
    background: rgba(143, 105, 0, 0.8);
-   border-width: 0;
+   border:1px solid rgba(54, 54, 54, 0.8);
    padding:0 20px;
    margin:0 auto;
 }
@@ -1223,13 +1222,6 @@ input.art-button
 input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea
 {
    background: #F8FAFB;
-   background: linear-gradient(top, #CAD6E2 0, #EEF2F6 40%, #F2F5F8 50%, #F2F5F8 100%) no-repeat;
-   background: -webkit-linear-gradient(top, #CAD6E2 0, #EEF2F6 40%, #F2F5F8 50%, #F2F5F8 100%) no-repeat;
-   background: -moz-linear-gradient(top, #CAD6E2 0, #EEF2F6 40%, #F2F5F8 50%, #F2F5F8 100%) no-repeat;
-   background: -o-linear-gradient(top, #CAD6E2 0, #EEF2F6 40%, #F2F5F8 50%, #F2F5F8 100%) no-repeat;
-   background: -ms-linear-gradient(top, #CAD6E2 0, #EEF2F6 40%, #F2F5F8 50%, #F2F5F8 100%) no-repeat;
-   background: linear-gradient(top, #CAD6E2 0, #EEF2F6 40%, #F2F5F8 50%, #F2F5F8 100%) no-repeat;
-   -svg-background: linear-gradient(top, #CAD6E2 0, #EEF2F6 40%, #F2F5F8 50%, #F2F5F8 100%) no-repeat;
    border:1px solid #696969;
    margin:0 auto;
 }

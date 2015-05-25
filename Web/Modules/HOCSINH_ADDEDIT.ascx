@@ -27,6 +27,10 @@
 <portal:mojoLabel ID="lblHS_NGAYSINH" runat="server" Text="Ngày sinh:" ></portal:mojoLabel>
 <portal:jDatePicker ID="HS_NGAYSINH" runat="server"></portal:jDatePicker><br/>
 <br /><br /><asp:HyperLink ID="linkTroLaiDanhSach" runat="server" NavigateUrl="~/HOCSINH_LIST.aspx">Trở lại</asp:HyperLink>
+    <br />
+    <portal:mojoButton ID="MojoButton1" runat="server" Text="Ghi dữ liệu" />
+    <asp:FileUpload ID="FileUpload1" runat="server" />
+    <portal:jDatePicker ID="JDatePicker1" runat="server"></portal:jDatePicker>
 </portal:InnerBodyPanel>
 </portal:OuterBodyPanel>
 </ContentTemplate>
