@@ -627,6 +627,7 @@
       <SubType>UserControl</SubType>
     </Content>
     <Content Include="cpl.txt" />
+    <Content Include="DBContext\DesignDB.mdb" />
     <Content Include="Default.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>

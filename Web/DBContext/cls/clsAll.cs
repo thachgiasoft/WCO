@@ -39,12 +39,26 @@ namespace t
         //    }
         //}
 
-        public static void CopyData(HtmlTable tblDetail, object outObj)
+        public static void CopyData(Control tblDetail, object outObj)
         {
             foreach (PropertyInfo i in outObj.GetType().GetProperties())
             {
                 if (i.PropertyType.FullName.Equals(typeof(string).FullName) == true)
                 {
+                    mojoLabel lbl1 = tblDetail.FindControl(i.Name) as mojoLabel;
+                    if (lbl1 != null)
+                    {
+                        i.SetValue(outObj, lbl1.Text, null);
+                        continue;
+                    }
+
+                    Label lbl2 = tblDetail.FindControl(i.Name) as Label;
+                    if (lbl2 != null)
+                    {
+                        i.SetValue(outObj, lbl2.Text, null);
+                        continue;
+                    }
+
                     TextBox txt = tblDetail.FindControl(i.Name) as TextBox;
                     if (txt != null)
                     {
@@ -71,17 +85,41 @@ namespace t
                     //Không thuộc trường hợp nào
                     continue;
                 }
-                if (i.PropertyType.FullName.Equals(typeof(int).FullName) == true)
+                if (i.PropertyType.FullName.Equals(typeof(int).FullName) == true||
+                    i.PropertyType.FullName.Equals(typeof(int?).FullName) == true)
                 {
+                    mojoLabel lbl1 = tblDetail.FindControl(i.Name) as mojoLabel;
+                    if (lbl1 != null)
+                    {
+                        int intValue = -1;
+                        bool tryP = int.TryParse(lbl1.Text, out intValue);
+                        if (tryP == false) continue;
+                        i.SetValue(outObj, intValue, null);
+                        continue;
+                    }
+
+                    Label lbl2 = tblDetail.FindControl(i.Name) as Label;
+                    if (lbl2 != null)
+                    {
+                        int intValue = -1;
+                        bool tryP = int.TryParse(lbl2.Text, out intValue);
+                        if (tryP == false) continue;
+                        i.SetValue(outObj, intValue, null);                        
+                        continue;
+                    }
+
                     //Thử với HidenField
                     HiddenField hd = tblDetail.FindControl(i.Name) as HiddenField;
-                    if (hd == null) continue;
-                    if (hd.Value == null) continue;
-                    if (string.IsNullOrEmpty(hd.Value) == true) continue;
-                    int intValue = -1;
-                    bool tryP = int.TryParse(hd.Value, out intValue);
-                    if (tryP == false) continue;
-                    i.SetValue(outObj, intValue, null);
+                    if (hd != null)
+                    {
+                        if (hd.Value == null) continue;
+                        if (string.IsNullOrEmpty(hd.Value) == true) continue;
+                        int intValue = -1;
+                        bool tryP = int.TryParse(hd.Value, out intValue);
+                        if (tryP == false) continue;
+                        i.SetValue(outObj, intValue, null);
+                        continue;
+                    }
                     continue;
                 }
                 if (i.PropertyType.FullName.Equals(typeof(decimal).FullName) == true)
@@ -184,12 +222,31 @@ namespace t
 
                     continue;
                 }
-                if (i.PropertyType.FullName.Equals(typeof(int).FullName) == true)
+                if (i.PropertyType.FullName.Equals(typeof(int).FullName) == true||
+                    i.PropertyType.FullName.Equals(typeof(int?).FullName) == true)
                 {
                     //Thử với HidenField
                     HiddenField hd = tblDetail.FindControl(i.Name) as HiddenField;
-                    if (hd == null) continue;
-                    hd.Value = string.Format("{0}", i.GetValue(outObj, null));
+                    if (hd != null)
+                    {
+                        hd.Value = string.Format("{0}", i.GetValue(outObj, null));
+                        continue;
+                    }
+
+                    Label lbl1 = tblDetail.FindControl(i.Name) as Label;
+                    if (lbl1 != null)
+                    {
+                        lbl1.Text = string.Format("{0}", i.GetValue(outObj, null));
+                        continue;
+                    }
+
+                    Label lbl2 = tblDetail.FindControl(i.Name) as Label;
+                    if (lbl2 != null)
+                    {
+                        lbl2.Text = string.Format("{0}", i.GetValue(outObj, null));
+                        continue;
+                    }
+
                     continue;
                 }
                 if (i.PropertyType.FullName.Equals(typeof(decimal).FullName) == true)

@@ -112,6 +112,15 @@ namespace mojoPortal.Web.Modules {
         protected global::mojoPortal.Web.Controls.WatermarkTextBox HS_HOTEN;
         
         /// <summary>
+        /// rHS_HOTEN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rHS_HOTEN;
+        
+        /// <summary>
         /// lblHS_TUOI control.
         /// </summary>
         /// <remarks>
@@ -139,6 +148,15 @@ namespace mojoPortal.Web.Modules {
         protected global::AjaxControlToolkit.FilteredTextBoxExtender HS_TUOI_FilteredTextBoxExtender;
         
         /// <summary>
+        /// rHS_TUOI control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rHS_TUOI;
+        
+        /// <summary>
         /// lblHS_NGAYSINH control.
         /// </summary>
         /// <remarks>
@@ -157,6 +175,24 @@ namespace mojoPortal.Web.Modules {
         protected global::mojoPortal.Web.UI.jDatePicker HS_NGAYSINH;
         
         /// <summary>
+        /// rHS_NGAYSINH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rHS_NGAYSINH;
+        
+        /// <summary>
+        /// btnGhi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::mojoPortal.Web.UI.mojoButton btnGhi;
+        
+        /// <summary>
         /// linkTroLaiDanhSach control.
         /// </summary>
         /// <remarks>
@@ -166,31 +202,22 @@ namespace mojoPortal.Web.Modules {
         protected global::System.Web.UI.WebControls.HyperLink linkTroLaiDanhSach;
         
         /// <summary>
-        /// MojoButton1 control.
+        /// lblMSG control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoButton MojoButton1;
+        protected global::System.Web.UI.WebControls.Label lblMSG;
         
         /// <summary>
-        /// FileUpload1 control.
+        /// ValidationSummary1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
-        
-        /// <summary>
-        /// JDatePicker1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::mojoPortal.Web.UI.jDatePicker JDatePicker1;
+        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
         
         /// <summary>
         /// divCleared control.

@@ -40,14 +40,50 @@
 	            if (o == null) return;	
 	            clsAll.BindData(pnlInnerBody, o);	
 	        }    	
-	        protected void Button1_Click(object sender, EventArgs e)	
-	        {	
-	        }	
+	  protected void btnGhi_Click(object sender, EventArgs e)	 
+	            {	 
+	                Page.Validate("GHIDULIEU");	 
+	                if (Page.IsValid == false)	 
+	                {	 
+	                    lblMSG.Text = "Có một số dữ liệu chưa đúng. Vui lòng xem lại dữ liệu.";	 
+	                    return;	 
+	                }	 
+	                try	 
+	                {	 
+	                    HOCSINH o = new HOCSINH();	 
+	                    clsAll.CopyData(pnlInnerBody, o);	 
+	                    using (tDBContext mainDB = new tDBContext())	 
+	                    {	 
+	                        if (o.HS_ID < 0)//them moi	 
+	                        {	 
+	                            string strMaxKey = mainDB.HOCSINHs.Max("HS_ID");	 
+	                            if (string.IsNullOrEmpty(strMaxKey) == true) strMaxKey = "0";	 
+	                            int intMaxKey = Convert.ToInt32(strMaxKey) + 1;	 
+	                            o.HS_ID = intMaxKey;	 
+	                            o.DataStatus = DBStatus.Inserted;	 
+	                            mainDB.HOCSINHs.InsertOnSubmit(o);	 
+	                        }	 
+	                        else//o.HS_ID >= 0 update	 
+	                        {	 
+	                            o.DataStatus = DBStatus.Updated;	 
+	                            mainDB.HOCSINHs.UpdateOnSubmit(o);	 
+	                        }	 
+	                        mainDB.SubmitAllChange();	 
+	                    }	 
+	                    HS_ID.Text = string.Format("{0}",o.HS_ID);	 
+	                    lblMSG.Text = string.Format("Ghi thành công lúc: {0}h{1} {2}giây",DateTime.Now.Hour,DateTime.Now.Minute,DateTime.Now.Second);	 
+	                }	 
+	                catch (Exception ex)	 
+	                {	 
+	                    lblMSG.Text = string.Format("Xảy ra lỗi: {0}",ex.Message);	 
+	                }	 
+	            }	 
 	        private void PopulateControls()	
 	        {	
 	        }	
 	        private void PopulateLabels()	
 	        {	
+	        lblMSG.Text = "";	
 	        }	
 	        private void LoadSettings()	
 	        {	
