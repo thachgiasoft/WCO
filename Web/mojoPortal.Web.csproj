@@ -665,6 +665,11 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Modules\BaoGia\WCO.PriceAnnounce.ascx" />
+    <Content Include="Modules\BieuDo\Nam.png" />
+    <Content Include="Modules\BieuDo\Quy.png" />
+    <Content Include="Modules\BieuDo\Thang.png" />
+    <Content Include="Modules\BieuDo\TheoNgay.png" />
+    <Content Include="Modules\BieuDo\TuanTheoThang.png" />
     <Content Include="Modules\ChildPageSiteMapModule.ascx" />
     <Content Include="Modules\CustomScript.ascx" />
     <Content Include="Modules\Gara\WCO.Gara.NewCar.ascx" />
