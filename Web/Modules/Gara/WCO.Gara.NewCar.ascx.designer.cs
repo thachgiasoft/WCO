@@ -7,8 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WCO.Gara {
-    
+namespace mojoPortal.Web.Modules
+{
     
     public partial class NewCar {
         

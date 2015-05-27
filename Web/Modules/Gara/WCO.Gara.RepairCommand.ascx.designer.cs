@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WCO.Gara {
+namespace mojoPortal.Web.Modules {
     
     
     public partial class RepairCommand {
@@ -263,6 +263,15 @@ namespace WCO.Gara {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox MojoTextArea21;
+        
+        /// <summary>
+        /// pnlTabs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlTabs;
         
         /// <summary>
         /// ExtGridView1 control.

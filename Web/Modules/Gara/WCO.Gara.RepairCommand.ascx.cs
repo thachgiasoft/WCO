@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WCO.Gara
+namespace mojoPortal.Web.Modules
 {
-    public partial class RepairCommand : mojoPortal.Web.SiteModuleControl
+    public partial class RepairCommand : SiteModuleControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {

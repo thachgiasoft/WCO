@@ -5,11 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WCO
+    namespace mojoPortal.Web.Modules
 {
-    namespace Gara
-{
-    public partial class NewCar : mojoPortal.Web.SiteModuleControl
+    public partial class NewCar : SiteModuleControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,5 +30,4 @@ namespace WCO
 
         }
     }
-}
 }

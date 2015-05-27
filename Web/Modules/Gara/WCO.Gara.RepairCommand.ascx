@@ -1,23 +1,10 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WCO.Gara.RepairCommand.ascx.cs" Inherits="WCO.Gara.RepairCommand" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WCO.Gara.RepairCommand.ascx.cs" Inherits="mojoPortal.Web.Modules.RepairCommand" %>
 <%@ Register Assembly="mojoPortal.Web" Namespace="mojoPortal.Web.UI" TagPrefix="cc1" %>
 <%@ Register Assembly="mojoPortal.Web.Controls" Namespace="mojoPortal.Web.Controls.ExtJs" TagPrefix="cc2" %>
 <%@ Register Assembly="mojoPortal.Web.Controls" Namespace="mojoPortal.Web.Controls" TagPrefix="cc3" %>
-<link href="modules/style.css" rel="stylesheet" type="text/css">
-<script src="modules/tabs_old.js"></script>
 <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-1332079-8']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
+    var myTabs = new YAHOO.widget.TabView("demo");
 </script>
-
 <cc1:OuterWrapperPanel ID="pnlOuterWrap" runat="server">
     <cc3:CornerRounderTop ID="ctop1" runat="server" />
     <cc1:InnerWrapperPanel ID="pnlInnerWrap" runat="server">
@@ -153,32 +140,82 @@
                     </tr>
                     <tr>
                         <td colspan="3">
-                            <div id="tabContainer">
-                                <div id="tabs">
-                                  <ul>
-                                    <li id="tabHeader_1">Nội dung sửa chữa</li>
-                                    <li id="tabHeader_2">Vật tư phụ tùng thay thế</li>
-                                  </ul>
+                            <asp:Panel ID="pnlTabs" runat="server" CssClass="modulecontent" width="99%">
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $(".selector").tabs();
+                                    });
+                                    function function1() {
+
+                                    }
+                                    function function2() {
+
+                                    }
+                                    function CallPageMethod() {
+                                        PageMethods.MyFirstPageMethod(onSucceeded, onFailed);
+                                    }
+                                    function onSuccess(result) {
+                                        var lbl = document.getElementById('lbl');
+                                        lbl.innerHTML = result;
+                                        alert(result);
+                                    }
+                                    function onFailure(error) {
+                                        alert(error);
+                                    }
+                                </script>
+                                <div class="settingrow">                                    
+                                    <div class="mojo-tabs">
+                                        <ul>
+                                            <li><a href="#tab1" onclick="function1();">Nội dung sửa chữa</a></li>
+                                            <li><a href="#tab2" onclick="function2();">Vật tư phụ tùng thay thế</a></li>
+                                        </ul>
+                                        <div id="tab1">                                
+                                            <cc2:ExtGridView ID="ExtGridView1" runat="server" Width="100%" AnimCollapse="True" AutoDestroy="True" AutoExpandColumn="" AutoGenerateColumns="False" AutoHeight="False" AutoLoad="" AutoScroll="False" AutoShow="False" AutoWidth="False" Border="True" Collapsed="False" CollapseFirst="True" Collapsible="False" DebugMode="False" DisabledClass="" DisableSelection="False" EnableColumnHide="True" EnableColumnMove="True" EnableColumnResize="True" EnableDragDrop="False" EnableHdMenu="True" EnableRowHeightSync="False" ExtJsBasePath="~/ClientScript/ext-2.0/" ExtraCssClass="" FixedPixelHeight="0" FixedPixelWidth="0" Footer="False" Frame="False" Header="False" HeaderAsText="True" HideBorders="False" IconCls="" Layout="" LoadMask="False" MinColumnWidth="25" MonitorWindowResize="True" Region="" StripeRows="False" Title="" TrackMouseOver="True">
+                                                <Columns>
+                                                    <asp:BoundField HeaderText="Mã hàng" DataField="MAHANG" />
+                                                    <asp:BoundField HeaderText="Loại" DataField="LOAI" />
+                                                    <asp:BoundField HeaderText="Tên hàng" DataField="TENHANG" />
+                                                    <asp:BoundField HeaderText="Tên vật tư tiếng Việt" DataField="TENTV" />
+                                                    <asp:BoundField HeaderText="ĐVT" DataField="DVT" />
+                                                    <asp:BoundField HeaderText="Tồn kho" DataField="TONKHO" />
+                                                    <asp:BoundField HeaderText="SL yêu cầu" DataField="SL_YEUCAU" />
+                                                    <asp:BoundField HeaderText="SL t.xuất" DataField="SL_TXUAT" />
+                                                    <asp:BoundField HeaderText="Giá bán" DataField="GIABAN" />
+                                                    <asp:BoundField HeaderText="%Giảm giá" DataField="GIAMGIA" />
+                                                    <asp:BoundField HeaderText="Tiền bán" DataField="TIENBAN" />
+                                                    <asp:BoundField HeaderText="% Thuế" DataField="THUE" />
+                                                    <asp:BoundField HeaderText="Lần" DataField="LAN" />
+                                                </Columns>
+                                            </cc2:ExtGridView>                                       
+                                        </div>
+                                        <div id="tab2">
+                                            <cc2:ExtGridView ID="ExtGridView2" runat="server" Width="100%" AnimCollapse="True" AutoDestroy="True" AutoExpandColumn="" AutoGenerateColumns="False" AutoHeight="False" AutoLoad="" AutoScroll="False" AutoShow="False" AutoWidth="False" Border="True" Collapsed="False" CollapseFirst="True" Collapsible="False" DebugMode="False" DisabledClass="" DisableSelection="False" EnableColumnHide="True" EnableColumnMove="True" EnableColumnResize="True" EnableDragDrop="False" EnableHdMenu="True" EnableRowHeightSync="False" ExtJsBasePath="~/ClientScript/ext-2.0/" ExtraCssClass="" FixedPixelHeight="0" FixedPixelWidth="0" Footer="False" Frame="False" Header="False" HeaderAsText="True" HideBorders="False" IconCls="" Layout="" LoadMask="False" MinColumnWidth="25" MonitorWindowResize="True" Region="" StripeRows="False" Title="" TrackMouseOver="True">
+                                                <Columns>
+                                                    <asp:BoundField HeaderText="Tên loại hình công việc" DataField="TENLHCV" />
+                                                    <asp:BoundField HeaderText="Loại" DataField="LOAI" />
+                                                    <asp:BoundField HeaderText="Mã ctcv" DataField="MACTCV" />
+                                                    <asp:BoundField HeaderText="Nội dung chi tiết" DataField="NOIDUNG" />
+                                                    <asp:BoundField HeaderText="Tiền công" DataField="TIENCONG" />
+                                                    <asp:BoundField HeaderText="% Giảm giá" DataField="GIAMGIA" />
+                                                    <asp:BoundField HeaderText="VAT (%)" DataField="VAT" />
+                                                    <asp:BoundField HeaderText="KTV" DataField="KTV" />
+                                                    <asp:BoundField HeaderText="Lần" DataField="LAN" />
+                                                </Columns>
+                                            </cc2:ExtGridView>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id="tabscontent">
-                                  <div class="tabpage" id="tabpage_1">
-                                      <cc2:ExtGridView ID="ExtGridView1" runat="server" width="100%"></cc2:ExtGridView>
-                                  </div>
-                                  <div class="tabpage" id="tabpage_2">
-                                      <cc2:ExtGridView ID="ExtGridView2" runat="server" width="100%"></cc2:ExtGridView>
-                                  </div>
-                                </div>
-                            </div>
-                        </td>                        
+                            </asp:Panel>
+                        </td>
                     </tr>
                     <tr>
-                        <td >
+                        <td>
                             <table style="width: 98%;">
                                 <tr>
                                     <td style="width: 25%">Hẹn lần sau</td>
                                     <td style="width: 25%">
                                         <asp:TextBox ID="MojoTextArea14" runat="server" Width="90%"></asp:TextBox></td>
-                                    <td style="width: 25%;text-align:center">hoặc</td>
+                                    <td style="width: 25%; text-align: center">hoặc</td>
                                     <td style="width: 25%">
                                         <asp:TextBox ID="MojoTextArea22" runat="server" Width="100%"></asp:TextBox></td>
                                 </tr>
@@ -188,35 +225,36 @@
                                         <asp:TextBox ID="MojoTextArea23" runat="server" Width="100%"></asp:TextBox></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4" style="text-decoration:underline">Theo dõi sau sửa chữa</td>
+                                    <td colspan="4" style="text-decoration: underline">Theo dõi sau sửa chữa</td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align:right">ĐT. thời gian</td>
-                                    <td style="text-align:right">
-                                        <asp:CheckBox ID="chkDT" runat="server" Text=" "/><asp:TextBox ID="MojoTextArea30" runat="server" Width="75%"></asp:TextBox>
+                                    <td style="text-align: right">ĐT. thời gian</td>
+                                    <td style="text-align: right">
+                                        <asp:CheckBox ID="chkDT" runat="server" Text=" " /><asp:TextBox ID="MojoTextArea30" runat="server" Width="75%"></asp:TextBox>
                                     </td>
                                     <td>Thư. thời gian</td>
-                                    <td style="text-align:right;margin:initial"><asp:CheckBox ID="chkThu" runat="server" Text=" "/>
-                                        <asp:Label ID="Label1" runat="server" Text=" Không cần " ></asp:Label>
-                                        <asp:CheckBox ID="chkKocan" runat="server" Text=" "/>
+                                    <td style="text-align: right; margin: initial">
+                                        <asp:CheckBox ID="chkThu" runat="server" Text=" " />
+                                        <asp:Label ID="Label1" runat="server" Text=" Không cần "></asp:Label>
+                                        <asp:CheckBox ID="chkKocan" runat="server" Text=" " />
                                     </td>
                                 </tr>
                             </table>
                         </td>
                         <td colspan="2">
-                            <table style="width: 100%; height:100%">
+                            <table style="width: 100%; height: 100%">
                                 <tr>
                                     <td style="width: 50%">
-                                        <table style="width: 100%; height:100%">
+                                        <table style="width: 100%; height: 100%">
                                             <tr>
                                                 <td colspan="2">
-                                                    <asp:Button ID="btnLenhBoSung" runat="server" Text="Lập lệnh bổ sung" Width="100%"/></td>
+                                                    <asp:Button ID="btnLenhBoSung" runat="server" Text="Lập lệnh bổ sung" Width="100%" /></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 50%">
-                                                    <asp:Button ID="Button1" runat="server" Text="Nhập Nd MG" Width="100%"/></td>
+                                                    <asp:Button ID="Button1" runat="server" Text="Nhập Nd MG" Width="100%" /></td>
                                                 <td style="width: 50%">
-                                                    <asp:Button ID="Button2" runat="server" Text="Quyết toán lệnh" Width="100%"/></td>
+                                                    <asp:Button ID="Button2" runat="server" Text="Quyết toán lệnh" Width="100%" /></td>
                                             </tr>
                                             <tr>
                                                 <td>Ngày Q.Toán</td>
@@ -232,7 +270,7 @@
                                                 <td style="width: 50%">Tiền công</td>
                                                 <td style="width: 50%">
                                                     <asp:TextBox Height="30px" ID="MojoTextArea24" runat="server" Width="90%"></asp:TextBox></td>
-                                                
+
                                             </tr>
                                             <tr>
                                                 <td>Tiền vật tư</td>
@@ -252,62 +290,70 @@
                     </tr>
                     <tr>
                         <td>
-                            <table style="width: 100%;">                                
+                            <table style="width: 100%;">
                                 <tr>
                                     <td style="width: 30%">Tiền môi giới</td>
                                     <td style="width: 40%">
-                                        <asp:TextBox ID="MojoTextArea36" runat="server" Width="90%"></asp:TextBox></td>
+                                        <asp:TextBox ID="MojoTextArea36" runat="server" Width="90%"></asp:TextBox>
+                                    </td>
                                     <td style="width: 30%">Nội dung môi giới</td>
-                                </tr>                                
+                                </tr>
                             </table>
                         </td>
                         <td colspan="2">
                             <asp:TextBox ID="MojoTextArea27" runat="server" Width="100%"></asp:TextBox></td>
-                        </td>
+                        </td>                   
                     </tr>
-                    <tr >
+                    <tr>
                         <td colspan="3">
-                            <table style="width: 100%;">                                
+                            <table style="width: 100%;">
                                 <tr>
                                     <td style="width: 15%">Trạng thái lệnh</td>
-                                    <td style="width: 12%"><asp:TextBox ID="MojoTextArea28" runat="server" Width="100%"></asp:TextBox></td>
-                                    <td style="width: 30%"><asp:TextBox ID="MojoTextArea29" runat="server" Width="100%"></asp:TextBox></td>
+                                    <td style="width: 12%">
+                                        <asp:TextBox ID="MojoTextArea28" runat="server" Width="100%"></asp:TextBox></td>
+                                    <td style="width: 30%">
+                                        <asp:TextBox ID="MojoTextArea29" runat="server" Width="100%"></asp:TextBox></td>
                                     <td style="width: 43%"></td>
-                                </tr>                                
+                                </tr>
                             </table>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <table style="width: 100%;">                                
+                            <table style="width: 100%;">
                                 <tr>
-                                    <td style="width: 15%"><asp:Button ID="Button3" runat="server" Text="Thêm" width="80%"/></td>
-                                    <td style="width: 15%"><asp:Button ID="Button4" runat="server" Text="Hủy" width="80%"/></td>
-                                    <td style="width: 15%"><asp:Button ID="Button5" runat="server" Text="Copy" width="80%"/></td>
+                                    <td style="width: 15%">
+                                        <asp:Button ID="Button3" runat="server" Text="Thêm" Width="80%" /></td>
+                                    <td style="width: 15%">
+                                        <asp:Button ID="Button4" runat="server" Text="Hủy" Width="80%" /></td>
+                                    <td style="width: 15%">
+                                        <asp:Button ID="Button5" runat="server" Text="Copy" Width="80%" /></td>
                                     <td style="width: 43%"></td>
-                                </tr>                                
-                            </table>
-                        </td>                            
-                        <td style="width: 28%">
-                            <table style="width: 100%;">                                
-                                <tr>
-                                    <td style="width: 15%"><asp:Button ID="Button6" runat="server" Text="Thoát" width="80%"/></td>
-                                    <td style="width: 43%"></td>
-                                </tr>                                
+                                </tr>
                             </table>
                         </td>
-                        <td style="width: 22%;text-align:right">
-                            <table style="width: 100%;">                                
+                        <td style="width: 28%">
+                            <table style="width: 100%;">
                                 <tr>
-                                    <td style="width: 13%"></td>
-                                    <td ><asp:Button ID="Button9" runat="server" Text="Lịch sử" width="80%"/></td>
-                                    <td ><asp:Button ID="Button10" runat="server" Text="Đặt lịch" width="80%"/></td>
-                                    <td ><asp:Button ID="Button11" runat="server" Text="Tìm kiếm" width="80%"/></td>                                    
-                                </tr>                                
+                                    <td style="width: 15%">
+                                        <asp:Button ID="Button6" runat="server" Text="Thoát" Width="80%" /></td>
+                                    <td style="width: 43%"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width: 22%; text-align: right">
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <asp:Button ID="Button9" runat="server" Text="Lịch sử" Width="90%" /></td>
+                                    <td>
+                                        <asp:Button ID="Button10" runat="server" Text="Đặt lịch" Width="90%" /></td>
+                                    <td>
+                                        <asp:Button ID="Button11" runat="server" Text="Tìm kiếm" Width="90%" /></td>
+                                </tr>
                             </table>
                         </td>
                     </tr>
-
                 </table>
             </ContentTemplate>
         </asp:UpdatePanel>

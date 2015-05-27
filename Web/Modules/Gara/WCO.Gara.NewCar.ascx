@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WCO.Gara.NewCar.ascx.cs" Inherits="WCO.Gara.NewCar" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="WCO.Gara.NewCar.ascx.cs" Inherits="mojoPortal.Web.Modules.NewCar" %>
 <%@ Register Assembly="mojoPortal.Web" Namespace="mojoPortal.Web.UI" TagPrefix="cc1" %>
 <%@ Register Assembly="mojoPortal.Web.Controls" Namespace="mojoPortal.Web.Controls.ExtJs" TagPrefix="cc2" %>
 <%@ Register Assembly="mojoPortal.Web.Controls" Namespace="mojoPortal.Web.Controls" TagPrefix="cc3" %>
