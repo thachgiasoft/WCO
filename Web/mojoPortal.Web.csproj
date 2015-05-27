@@ -317,21 +317,47 @@
     <Reference Include="HtmlDiff">
       <HintPath>..\_libs\HtmlDiff.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Ionic.Zip.Reduced">
       <HintPath>..\_libs\Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\_libs\log4net1-2-11\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Lucene.Net, Version=2.1.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\_libs\Apache-Lucene.Net-3.0.3\NET40\bin\Lucene.Net.dll</HintPath>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net.Contrib.Analyzers">
-      <HintPath>..\_libs\Apache-Lucene.Net-3.0.3\NET40\bin\Contrib\Lucene.Net.Contrib.Analyzers.dll</HintPath>
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Analyzers.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Core">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.FastVectorHighlighter">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.FastVectorHighlighter.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net.Contrib.Highlighter">
-      <HintPath>..\_libs\Apache-Lucene.Net-3.0.3\NET40\bin\Contrib\Lucene.Net.Contrib.Highlighter.dll</HintPath>
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Highlighter.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Memory">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Queries">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Queries.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Regex">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Regex.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SimpleFacetedSearch">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.SimpleFacetedSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Snowball">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.Snowball.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SpellChecker">
+      <HintPath>..\packages\Lucene.Net.Contrib.3.0.3\lib\net40\Lucene.Net.Contrib.SpellChecker.dll</HintPath>
     </Reference>
     <Reference Include="MetaDataExtractor, Version=2.3.0.38010, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -601,6 +627,7 @@
       <SubType>UserControl</SubType>
     </Content>
     <Content Include="cpl.txt" />
+    <Content Include="DBContext\DesignDB.mdb" />
     <Content Include="Default.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -637,11 +664,13 @@
     <Content Include="MemberList.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Content Include="Modules\BaoGia\WCO.PriceAnnounce.ascx" />
     <Content Include="Modules\ChildPageSiteMapModule.ascx" />
     <Content Include="Modules\CustomScript.ascx" />
     <Content Include="Modules\Gara\WCO.Gara.NewCar.ascx" />
     <Content Include="Modules\Gara\WCO.Gara.RepairCommand.ascx" />
     <Content Include="Modules\Gara\WebUserControl1.ascx" />
+    <Content Include="Modules\HOCSINH_ADDEDIT.ascx" />
     <Content Include="Modules\HOCSINH_VIEW.ascx" />
     <Content Include="Modules\HtmlModule.ascx">
       <SubType>ASPXCodeBehind</SubType>
@@ -2505,6 +2534,13 @@
     <Compile Include="MemberList.aspx.designer.cs">
       <DependentUpon>MemberList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Modules\BaoGia\WCO.PriceAnnounce.ascx.cs">
+      <DependentUpon>WCO.PriceAnnounce.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\BaoGia\WCO.PriceAnnounce.ascx.designer.cs">
+      <DependentUpon>WCO.PriceAnnounce.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Modules\ChildPageSiteMapModule.ascx.cs">
       <DependentUpon>ChildPageSiteMapModule.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2528,13 +2564,31 @@
     </Compile>
     <Compile Include="Modules\Gara\WCO.Gara.NewCar.ascx.cs">
       <DependentUpon>WCO.Gara.NewCar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Gara\WCO.Gara.NewCar.ascx.designer.cs">
+      <DependentUpon>WCO.Gara.NewCar.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Gara\WCO.Gara.RepairCommand.ascx.cs">
+      <DependentUpon>WCO.Gara.RepairCommand.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Gara\WCO.Gara.RepairCommand.ascx.designer.cs">
       <DependentUpon>WCO.Gara.RepairCommand.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\Gara\WebUserControl1.ascx.cs">
       <DependentUpon>WebUserControl1.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\Gara\WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\HOCSINH_ADDEDIT.ascx.cs">
+      <DependentUpon>HOCSINH_ADDEDIT.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modules\HOCSINH_ADDEDIT.ascx.designer.cs">
+      <DependentUpon>HOCSINH_ADDEDIT.ascx</DependentUpon>
     </Compile>
     <Compile Include="Modules\HOCSINH_VIEW.ascx.cs">
       <DependentUpon>HOCSINH_VIEW.ascx</DependentUpon>
@@ -2680,6 +2734,7 @@
     </Compile>
     <Compile Include="Secure\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Secure\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>

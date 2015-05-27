@@ -2,8 +2,8 @@
 <%@ Register Assembly="mojoPortal.Web" Namespace="mojoPortal.Web.UI" TagPrefix="cc1" %>
 <%@ Register Assembly="mojoPortal.Web.Controls" Namespace="mojoPortal.Web.Controls.ExtJs" TagPrefix="cc2" %>
 <%@ Register Assembly="mojoPortal.Web.Controls" Namespace="mojoPortal.Web.Controls" TagPrefix="cc3" %>
-<link href="style.css" rel="stylesheet" type="text/css">
-<script src="tabs_old.js"></script>
+<link href="modules/style.css" rel="stylesheet" type="text/css">
+<script src="modules/tabs_old.js"></script>
 <script type="text/javascript">
 
     var _gaq = _gaq || [];
@@ -231,7 +231,8 @@
                                             <tr>
                                                 <td style="width: 50%">Tiền công</td>
                                                 <td style="width: 50%">
-                                                    <asp:TextBox ID="MojoTextArea24" runat="server" Width="90%"></asp:TextBox></td>
+                                                    <asp:TextBox Height="30px" ID="MojoTextArea24" runat="server" Width="90%"></asp:TextBox></td>
+                                                
                                             </tr>
                                             <tr>
                                                 <td>Tiền vật tư</td>

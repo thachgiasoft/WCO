@@ -55,7 +55,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea txtBienSo;
+        protected global::System.Web.UI.WebControls.TextBox txtBienSo;
         
         /// <summary>
         /// MojoTextArea5 control.
@@ -64,7 +64,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea5;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea5;
         
         /// <summary>
         /// MojoTextArea3 control.
@@ -73,7 +73,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea3;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea3;
         
         /// <summary>
         /// MojoTextArea4 control.
@@ -82,7 +82,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea4;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea4;
         
         /// <summary>
         /// MojoTextArea1 control.
@@ -91,7 +91,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea1;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea1;
         
         /// <summary>
         /// MojoTextArea2 control.
@@ -100,7 +100,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea2;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea2;
         
         /// <summary>
         /// MojoTextArea16 control.
@@ -109,7 +109,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea16;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea16;
         
         /// <summary>
         /// MojoTextArea17 control.
@@ -118,7 +118,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea17;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea17;
         
         /// <summary>
         /// MojoTextArea13 control.
@@ -127,7 +127,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea13;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea13;
         
         /// <summary>
         /// MojoTextArea15 control.
@@ -136,7 +136,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea15;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea15;
         
         /// <summary>
         /// MojoTextArea18 control.
@@ -145,7 +145,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea18;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea18;
         
         /// <summary>
         /// MojoTextArea19 control.
@@ -154,7 +154,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea19;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea19;
         
         /// <summary>
         /// MojoTextArea40 control.
@@ -163,7 +163,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea40;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea40;
         
         /// <summary>
         /// MojoTextArea6 control.
@@ -172,7 +172,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea6;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea6;
         
         /// <summary>
         /// MojoTextArea41 control.
@@ -181,7 +181,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea41;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea41;
         
         /// <summary>
         /// MojoTextArea43 control.
@@ -190,7 +190,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea43;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea43;
         
         /// <summary>
         /// MojoTextArea44 control.
@@ -199,7 +199,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea44;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea44;
         
         /// <summary>
         /// MojoTextArea7 control.
@@ -208,7 +208,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea7;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea7;
         
         /// <summary>
         /// MojoTextArea8 control.
@@ -217,7 +217,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea8;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea8;
         
         /// <summary>
         /// MojoTextArea9 control.
@@ -226,7 +226,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea9;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea9;
         
         /// <summary>
         /// MojoTextArea10 control.
@@ -235,7 +235,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea10;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea10;
         
         /// <summary>
         /// MojoTextArea12 control.
@@ -244,7 +244,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea12;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea12;
         
         /// <summary>
         /// MojoTextArea20 control.
@@ -253,7 +253,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea20;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea20;
         
         /// <summary>
         /// MojoTextArea21 control.
@@ -262,7 +262,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea21;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea21;
         
         /// <summary>
         /// ExtGridView1 control.
@@ -289,7 +289,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea14;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea14;
         
         /// <summary>
         /// MojoTextArea22 control.
@@ -298,7 +298,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea22;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea22;
         
         /// <summary>
         /// MojoTextArea23 control.
@@ -307,7 +307,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea23;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea23;
         
         /// <summary>
         /// chkDT control.
@@ -325,7 +325,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea30;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea30;
         
         /// <summary>
         /// chkThu control.
@@ -388,7 +388,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea11;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea11;
         
         /// <summary>
         /// MojoTextArea24 control.
@@ -397,7 +397,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea24;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea24;
         
         /// <summary>
         /// MojoTextArea25 control.
@@ -406,7 +406,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea25;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea25;
         
         /// <summary>
         /// MojoTextArea26 control.
@@ -415,7 +415,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea26;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea26;
         
         /// <summary>
         /// MojoTextArea36 control.
@@ -424,7 +424,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea36;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea36;
         
         /// <summary>
         /// MojoTextArea27 control.
@@ -433,7 +433,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea27;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea27;
         
         /// <summary>
         /// MojoTextArea28 control.
@@ -442,7 +442,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea28;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea28;
         
         /// <summary>
         /// MojoTextArea29 control.
@@ -451,7 +451,7 @@ namespace WCO.Gara {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::mojoPortal.Web.UI.mojoTextArea MojoTextArea29;
+        protected global::System.Web.UI.WebControls.TextBox MojoTextArea29;
         
         /// <summary>
         /// Button3 control.
